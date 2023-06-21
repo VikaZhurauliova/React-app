@@ -1,0 +1,26 @@
+.userProfile {
+  height: 100%;
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #5360CD;
+  gap: 16px;
+}
+
+.userProfile__initials {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 34px;
+  padding: 7px 11px;
+  background-color: #5360CD;
+  border-radius: 2px;
+}
+
+.userProfile__full-name{
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 34px;
+}
