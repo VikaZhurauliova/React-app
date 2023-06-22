@@ -1,33 +1,25 @@
 import './tabs.scss'
+import {useState} from "react";
 
 const Tabs = () => {
-    const activeTab = () => {
-        let tabs = document.getElementsByClassName("tabs-wrap-cell");
-        for (let i = 0; i < tabs.length; i++) {
-            tabs[i].addEventListener("click", function() {
-                let current = document.getElementsByClassName("tabs-active");
-                current[0].className = current[0].className.replace(" tabs-active", "");
-                this.className += " tabs-active";
-            });
-        }
-    }
+  const [ activeTab, setActiveTab ] = useState('all');
 
-    return(
-        <div className="tabs">
-            <p className="tabs-title">Tabs</p>
-            <div className="tabs-wrap">
-                <div className="tabs-wrap-cell tabs-active">
-                    <p className="tabs-wrap-cell-title" onClick={activeTab}>All</p>
-                </div>
-                <div className="tabs-wrap-cell">
-                    <p className="tabs-wrap-cell-title" onClick={activeTab}>My favorites</p>
-                </div>
-                <div className="tabs-wrap-cell">
-                    <p className="tabs-wrap-cell-title" onClick={activeTab}>Popular</p>
-                </div>
-            </div>
+  return(
+    <div className="tabs">
+      <p className="tabs-title">Tabs</p>
+      <div className="tabs-wrap">
+        <div className={`tabs-wrap-cell ${activeTab === 'all' ? 'tabs-active' : ''}`}>
+          <p className="tabs-wrap-cell-title" onClick={() => setActiveTab('all')}>All</p>
         </div>
-    )
+        <div className={`tabs-wrap-cell ${activeTab === 'favorite' ? 'tabs-active' : ''}`}>
+          <p className="tabs-wrap-cell-title" onClick={() => setActiveTab('favorite')}>My favorites</p>
+        </div>
+        <div className={`tabs-wrap-cell ${activeTab === 'popular' ? 'tabs-active' : ''}`}>
+          <p className="tabs-wrap-cell-title" onClick={() => setActiveTab('popular')}>Popular</p>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default Tabs

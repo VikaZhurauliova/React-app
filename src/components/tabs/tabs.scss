@@ -3,7 +3,12 @@
 
   &-active {
     border-bottom: 2px solid #313037;;
+
+    > p {
+      color: red;
+    }
   }
+
   &-title {
     color: #8D8E97;
     font-weight: 600;
