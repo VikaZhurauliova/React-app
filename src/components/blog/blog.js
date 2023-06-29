@@ -1,11 +1,5 @@
 import {useState, useEffect} from "react";
 
-import { ReactComponent as Like } from '../../assets/svg/Like.svg';
-import { ReactComponent as Dislike } from '../../assets/svg/Down.svg';
-import { ReactComponent as Bookmark } from '../../assets/svg/Bookmark.svg';
-import { ReactComponent as Ellipsis } from '../../assets/svg/More-Horizontal.svg';
-
-
 import './blog.scss'
 import LargePost from "./largePost/largePost";
 import MiddlePost from "./middlePost/middlePost";
@@ -18,7 +12,7 @@ const Blog = () => {
             const getPosts = async () => {
                 try {
                     const urlParams = new URLSearchParams({
-                        limit: 11,
+                        limit: 15,
                         offset: 1,
                     });
                     const { results: postsResponse } = await fetch('https://studapi.teachmeskills.by//blog/posts?' + urlParams)
@@ -28,8 +22,9 @@ const Blog = () => {
                     console.error(e);
                 }
             }
+            console.log(posts)
             getPosts();
-        console.log(posts)
+
 
     }, [])
     return (

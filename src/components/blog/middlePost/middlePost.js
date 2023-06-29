@@ -18,14 +18,14 @@ const MiddlePost = ({posts, setPosts}) => {
                             {item?.date}
                         </div>
                         <h2 className="blog-container-col60-middle-cell-description-title">
-                            Astronauts prep for new solar arrays on nearly seven-hour spacewalk ...
+                            {item?.title}
                         </h2>
                     </div>
                     <div className="blog-container-col60-large-footer">
                         <div className="blog-container-col60-large-footer-marks">
                             <div className="blog-container-col60-large-footer-marks-like">
                                 <Like/>
-                                <p className="blog-container-col60-large-footer-marks-like-count">20</p>
+                                <p className="blog-container-col60-large-footer-marks-like-count">{item?.author}</p>
                             </div>
                             <Dislike/>
                         </div>

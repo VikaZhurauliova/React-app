@@ -14,10 +14,10 @@ const LargePost = ({posts, setPosts}) => {
                     {posts[0]?.date}
                 </div>
                 <h2 className="blog-container-col60-large-description-title">
-                    Astronauts prep for new solar arrays on nearly seven-hour spacewalk ...
+                    {posts[0]?.title}
                 </h2>
                 <p className="blog-container-col60-large-description-text">
-                    Astronauts Kayla Barron and Raja Chari floated out of the International Space Station airlock for a spacewalk Tuesday, installing brackets and struts to support new solar arrays to upgrade the research lab’s power system on the same day that crewmate Mark Vande Hei marked his 341st day in orbit, a U.S. record for a single spaceflight.
+                    {posts[0]?.description}
                 </p>
             </div>
             <img src={posts[0]?.image} className="blog-container-col60-large-image"></img>
@@ -25,7 +25,7 @@ const LargePost = ({posts, setPosts}) => {
                 <div className="blog-container-col60-large-footer-marks">
                     <div className="blog-container-col60-large-footer-marks-like">
                         <Like/>
-                        <p className="blog-container-col60-large-footer-marks-like-count">20</p>
+                        <p className="blog-container-col60-large-footer-marks-like-count">{posts[0]?.author}</p>
                     </div>
                     <Dislike/>
                 </div>

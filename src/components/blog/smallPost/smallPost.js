@@ -9,7 +9,7 @@ const SmallPost = ({posts, setPosts}) => {
 
     return (
         <div className="blog-container-col40">
-            {posts.slice(5, 10).map(item => (
+            {posts.slice(8, 14).map(item => (
                 <div key={item.id}>
                     <div className="blog-container-col40-small">
                         <div className="blog-container-col40-small-description">
@@ -17,7 +17,7 @@ const SmallPost = ({posts, setPosts}) => {
                                 {item?.date}
                             </div>
                             <h2 className="blog-container-col40-large-description-title">
-                                Astronauts prep for new solar arrays on nearly seven-hour spacewalk ...
+                                {item?.title}
                             </h2>
                         </div>
                         <img src={item?.image} className="blog-container-col40-small-image"></img>
@@ -25,7 +25,7 @@ const SmallPost = ({posts, setPosts}) => {
                             <div className="blog-container-col60-large-footer-marks">
                                 <div className="blog-container-col60-large-footer-marks-like">
                                     <Like/>
-                                    <p className="blog-container-col60-large-footer-marks-like-count">20</p>
+                                    <p className="blog-container-col60-large-footer-marks-like-count">{item?.author}</p>
                                 </div>
                                 <Dislike/>
                             </div>
