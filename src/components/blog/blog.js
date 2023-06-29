@@ -4,29 +4,11 @@ import './blog.scss'
 import LargePost from "./largePost/largePost";
 import MiddlePost from "./middlePost/middlePost";
 import SmallPost from "./smallPost/smallPost";
+import usePosts from "../../hooks/usePosts";
 
 const Blog = () => {
-    const [ posts, setPosts ] = useState([]);
+    const { posts, setPosts } = usePosts();
 
-        useEffect(() => {
-            const getPosts = async () => {
-                try {
-                    const urlParams = new URLSearchParams({
-                        limit: 15,
-                        offset: 1,
-                    });
-                    const { results: postsResponse } = await fetch('https://studapi.teachmeskills.by//blog/posts?' + urlParams)
-                        .then(response => response.json())
-                    setPosts(postsResponse)
-                } catch (e) {
-                    console.error(e);
-                }
-            }
-            console.log(posts)
-            getPosts();
-
-
-    }, [])
     return (
         <div className="container">
             <div className="blog-container">
