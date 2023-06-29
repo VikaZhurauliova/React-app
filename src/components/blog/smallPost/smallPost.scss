@@ -1,0 +1,36 @@
+@import "src/styles/colors";
+
+.blog-container-col40{
+    width: 28%;
+
+    &-small {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &-image {
+        width: 96px;
+        height: 96px;
+      }
+      &-description {
+        width: 70%;
+        &-date {
+          color: $GREY;
+          font-size: 16px;
+        }
+
+        &-title {
+          color: $SECONDARY;
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+.under-line {
+  width: 100%;
+  color: #DADADA;
+  margin-bottom: 40px;
+}

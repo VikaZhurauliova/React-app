@@ -1,25 +1,19 @@
+@import "src/styles/colors";
 .tabs {
-  padding: 20px;
 
   &-active {
-    border-bottom: 2px solid #313037;;
-
-    > p {
-      color: red;
-    }
+    border-bottom: 2px solid $SECONDARY;;
   }
-
   &-title {
-    color: #8D8E97;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
+    color: $SECONDARY;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 80px;
+    margin: 72px 0 47px 0;
   }
 
   &-wrap{
-    border-bottom: 1px solid #DADADA;
+    border-bottom: 1px solid $MEDIUM;
     display: flex;
     gap: 40px;
 
@@ -30,11 +24,12 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 24px;
-        color: #313037;
+        color: $SECONDARY;
         cursor: pointer;
+        margin: 0;
 
         &:hover{
-          color: #2231AA;
+          color: $PRIMARY;
         }
       }
     }

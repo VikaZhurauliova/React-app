@@ -1,8 +1,10 @@
+@import "src/styles/colors";
+
 .menuButton {
   padding: 0 30px;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid #5360CD!important;
+  border-right: 1px solid $PRIMARY2!important;
 }

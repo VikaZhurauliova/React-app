@@ -1,6 +1,8 @@
+@import "src/styles/colors";
+
 .menu {
   height: 84px;
-  background-color: #2231AA;
+  background-color: $PRIMARY;
   display: flex;
   justify-content: space-between;
 }

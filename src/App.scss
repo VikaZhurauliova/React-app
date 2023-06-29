@@ -1,3 +1,7 @@
+* {
+  margin:0;
+  padding:0;
+}
 .App {}
 
 .btn-custom{
@@ -5,4 +9,13 @@
   background-color: transparent;
   border: none;
   outline: none;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.container + .container {
+  margin-top: 72px;
 }
