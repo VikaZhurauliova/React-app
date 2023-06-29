@@ -1,0 +1,62 @@
+@import "src/styles/colors";
+
+.blog-container-col60-large {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &-description {
+        width: 70%;
+
+        &-date {
+          color: $GREY;
+          font-size: 16px;
+        }
+
+        &-title {
+          color: $SECONDARY;
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 44px;
+          margin: 8px 0 24px
+        }
+
+        &-text {
+          color: $GREY;
+          font-size: 16px;
+        }
+      }
+
+      &-image {
+        width: 256px;
+        height: 244px;
+      }
+
+      &-footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &-marks {
+          display: flex;
+          gap: 24px;
+
+          &-like {
+            display: flex;
+            gap: 8px;
+
+            &-count {
+              color: $SECONDARY;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+}
+.under-line {
+  width: 100%;
+  color: #DADADA;
+}
