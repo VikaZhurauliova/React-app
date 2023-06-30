@@ -1,7 +1,7 @@
-import usePosts from "../../hooks/usePost";
 import LargePost from "./largePost/largePost";
 import MiddlePost from "./middlePost/middlePost";
 import SmallPost from "./smallPost/smallPost";
+import usePosts from "../../hooks/usePosts";
 
 import './blog.scss'
 
@@ -19,5 +19,4 @@ const Blog = () => {
         </div>
     );
 }
-
 export default Blog
