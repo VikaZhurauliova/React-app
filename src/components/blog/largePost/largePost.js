@@ -25,7 +25,7 @@ const LargePost = ({posts, setPosts}) => {
                 <div className="blog-container-col60-large-footer-marks">
                     <div className="blog-container-col60-large-footer-marks-like">
                         <Like/>
-                        <p className="blog-container-col60-large-footer-marks-like-count">{posts[0]?.author}</p>
+                        <p className="blog-container-col60-large-footer-marks-like-count">{posts[0]?.lesson_num}</p>
                     </div>
                     <Dislike/>
                 </div>

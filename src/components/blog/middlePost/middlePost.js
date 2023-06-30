@@ -10,7 +10,7 @@ const MiddlePost = ({posts, setPosts}) => {
 
     return (
         <div className="blog-container-col60-middle">
-            {posts.slice(5, 9).map(item => (
+            {posts.slice(1, 5).map(item => (
                 <div className="blog-container-col60-middle-cell" key={item.id}>
                     <img src={item?.image} className="blog-container-col60-middle-cell-image"></img>
                     <div className="blog-container-col60-middle-cell-description">
@@ -25,7 +25,7 @@ const MiddlePost = ({posts, setPosts}) => {
                         <div className="blog-container-col60-large-footer-marks">
                             <div className="blog-container-col60-large-footer-marks-like">
                                 <Like/>
-                                <p className="blog-container-col60-large-footer-marks-like-count">{item?.author}</p>
+                                <p className="blog-container-col60-large-footer-marks-like-count">{item?.lesson_num}</p>
                             </div>
                             <Dislike/>
                         </div>
