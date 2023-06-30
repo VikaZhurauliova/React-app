@@ -11,8 +11,7 @@ import SearchResult from "./pages/searchResult/searchResult";
 
 import './App.scss';
 function App() {
-
-    const posts = usePosts()
+    const { posts, setPosts } = usePosts()
     const [ activeTab, setActiveTab ] = useState(TABS[0]?.key);
     const user = {
     firstName: "Nick",
@@ -21,11 +20,11 @@ function App() {
     const [search, setSearch] = useState("");
 
   return(
-      <PostsContext.Provider value={{posts, search, setSearch}}>
+      <PostsContext.Provider value={{ posts, search, setSearch }}>
           <div className="App">
               <Menu user={user}/>
               <Tabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={TABS} />
-              <Blog/>
+              <Blog />
               <RoutesComponent/>
               <SearchResult />
           </div>

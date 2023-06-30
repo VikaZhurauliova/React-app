@@ -6,9 +6,8 @@ import {useContext, useState} from "react";
 
 
 const MenuSearch = () => {
-
     const [ isInputShown, setIsInputShown ] = useState(false);
-    const [search, setSearch] = useContext(PostsContext)
+    const { search, setSearch } = useContext(PostsContext)
 
     return (
         <div className="menuSearch">

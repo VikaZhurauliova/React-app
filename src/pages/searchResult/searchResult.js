@@ -14,7 +14,7 @@ const SearchResult = () => {
     return (
         <>
             {filteredPosts.map((post) => (
-                <SmallPost key={post.id}/>
+                <SmallPost posts={[ post ]} key={post.id}/>
             ))}
         </>
     )

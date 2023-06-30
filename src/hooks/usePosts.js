@@ -17,7 +17,6 @@ const usePosts = () => {
         console.error(e);
       }
     }
-    console.log(posts)
     getPosts();
 
 

@@ -5,7 +5,8 @@ import { ReactComponent as Ellipsis } from '../../../assets/svg/More-Horizontal.
 
 
 import './smallPost.scss'
-const SmallPost = ({posts, setPosts}) => {
+const SmallPost = ({ posts, setPosts }) => {
+  console.log(posts)
 
     return (
         <div className="blog-container-col40">
