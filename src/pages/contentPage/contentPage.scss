@@ -1,0 +1,134 @@
+@import "src/styles/colors";
+.content-page {
+  &-header{
+    color: $GREY;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    display: flex;
+    gap: 8px;
+
+    &-title {
+      color: $SECONDARY;
+    }
+
+    &-number {
+      padding-left: 8px;
+      color: $GREY;
+      border-left: 2px solid $GREY;
+    }
+  }
+
+  &-post {
+    &-title {
+      color: $SECONDARY;
+      font-size: 56px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 80px;
+      margin: 32px 0 48px;
+      text-align: center;
+    }
+  }
+
+  &-image {
+    position:absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &-wrap {
+      width: 992px;
+      height: 518px;
+      margin: 48px auto;
+      overflow:hidden;
+      position:relative;
+    }
+
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding:0 35px;
+
+    &-main {
+      color: $SECONDARY;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 32px;
+    }
+  }
+
+  &-action {
+    display: flex;
+    justify-content: space-between;
+
+    &-marks {
+      display: flex;
+      gap: 6px;
+
+      &-like {
+        padding: 16px 32px;
+        background-color: $LIGHT;
+      }
+    }
+
+    &-favorites {
+      display: flex;
+      gap: 10px;
+      background-color: $LIGHT;
+      padding: 16px 32px;
+
+      &-text {
+        color: $SECONDARY;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &-line{
+    width: 100%;
+    color: $MEDIUM;
+    margin: 72px 0;
+  }
+
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+
+      &-main{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        &-prev {
+          color: $SECONDARY;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 24px;
+        }
+        &-text {
+          color: $GREY;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+        }
+      }
+    }
+
+
+  }
+}

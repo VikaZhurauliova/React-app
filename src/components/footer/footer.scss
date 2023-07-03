@@ -1,0 +1,11 @@
+@import "src/styles/colors";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  color: $GREY;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}

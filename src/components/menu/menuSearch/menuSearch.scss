@@ -6,5 +6,21 @@
   align-items: center;
   border-left: 1px solid $PRIMARY2;
   padding: 0 30px;
+
+  &-input {
+    width: 1510px;
+    margin: 0 30px;
+    height: 100%;
+    background-color: $PRIMARY2;
+    padding: 0 32px;
+    border: none;
+
+    &::placeholder {
+      color: $INPUT_PLACEHOLDER;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
 }
 

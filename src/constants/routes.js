@@ -1,7 +1,10 @@
 export const ROUTES = {
     main: '/',
     signIn: 'signIn',
-    success: 'success',
+    registrationConfirmation: 'registrationConfirmation',
     blog: 'blog',
-    post: 'post'
+    post: 'post',
+    searchResult: 'searchResult',
+    contentPage: 'contentPage',
+    mainPage: 'mainPage'
 }

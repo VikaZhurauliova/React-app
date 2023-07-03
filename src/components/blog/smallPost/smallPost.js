@@ -6,11 +6,9 @@ import { ReactComponent as Ellipsis } from '../../../assets/svg/More-Horizontal.
 
 import './smallPost.scss'
 const SmallPost = ({ posts, setPosts }) => {
-  console.log(posts)
-
     return (
         <div className="blog-container-col40">
-            {posts.slice(6, 12).map(item => (
+            {posts.slice(6, 11).map(item => (
                 <div key={item.id}>
                     <div className="blog-container-col40-small">
                         <div className="blog-container-col40-small-description">

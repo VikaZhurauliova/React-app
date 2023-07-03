@@ -8,11 +8,8 @@ import './menuButton.scss'
 
 const MenuButton = (props) => {
   const [nav, setNav] = useState(false);
-  let testValue = 'test';
   const updateState = () => {
     setNav(!nav);
-    testValue += '_1';
-    console.log(testValue);
   }
 
   return (

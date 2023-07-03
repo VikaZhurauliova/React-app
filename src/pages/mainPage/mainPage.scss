@@ -1,0 +1,12 @@
+@import "src/styles/colors";
+
+.blog-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 64px;
+
+  &-col60 {
+    width: 70%;
+    gap: 32px;
+  }
+}

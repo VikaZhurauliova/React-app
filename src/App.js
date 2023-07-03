@@ -10,6 +10,9 @@ import Blog from "./components/blog/blog";
 import SearchResult from "./pages/searchResult/searchResult";
 
 import './App.scss';
+import Input from "./components/form/input/input";
+import Button from "./components/button/button";
+import SignUp from "./pages/authorization/signUp/signUp";
 function App() {
     const { posts, setPosts } = usePosts()
     const [ activeTab, setActiveTab ] = useState(TABS[0]?.key);
@@ -23,10 +26,10 @@ function App() {
       <PostsContext.Provider value={{ posts, search, setSearch }}>
           <div className="App">
               <Menu user={user}/>
-              <Tabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={TABS} />
-              <Blog />
+              {/*<Tabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={TABS} />*/}
+              {/*<Blog />*/}
               <RoutesComponent/>
-              <SearchResult />
+              {/*<SearchResult />*/}
           </div>
       </PostsContext.Provider>
   )

@@ -10,7 +10,7 @@ const MiddlePost = ({posts, setPosts}) => {
 
     return (
         <div className="blog-container-col60-middle">
-            {posts.slice(1, 5).map(item => (
+            {posts.slice(1, 7).map(item => (
                 <div className="blog-container-col60-middle-cell" key={item.id}>
                     <img src={item?.image} className="blog-container-col60-middle-cell-image"></img>
                     <div className="blog-container-col60-middle-cell-description">

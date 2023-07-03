@@ -1,0 +1,43 @@
+@import "src/styles/colors";
+
+.signIn {
+  margin: 72px 0;
+
+  &-backHome {
+    color: $SECONDARY;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+  }
+
+  &-title {
+    color: $SECONDARY;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 80px;
+    margin-top: 32px;
+  }
+
+  &-form {
+    width: 624px;
+    border: 1px solid $MEDIUM;
+    margin: 72px auto;
+
+    &-forgot {
+      margin: -15px 0 48px;
+    }
+
+    &-registration {
+      color: $GREY;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      margin: 24px auto;
+
+      &-link {
+        color: $PRIMARY;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.form {
+  &-container {
+    padding: 40px;
+    border: 1px solid #DADADA;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-item {
+    &-container {
+
+    }
+  }
+}

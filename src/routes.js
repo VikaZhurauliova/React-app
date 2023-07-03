@@ -1,16 +1,22 @@
 import {Routes, Route} from "react-router-dom";
 
 import {ROUTES} from "./constants/routes";
-import Landing from "./pages/landing/landing";
-import SignIn from "./pages/authorization/signIn/signIn";
 
+import SearchResult from "./pages/searchResult/searchResult";
+import SignIn from "./pages/authorization/signIn/signIn";
+import RegistrationConfirmation from "./pages/authorization/registrationConfirmation/registrationConfirmation";
+import ContentPage from "./pages/contentPage/contentPage";
+import MainPage from "./pages/mainPage/mainPage";
 const RoutesComponent = () => {
 
     return (
         <div>
             <Routes>
-                <Route path={ROUTES.main} element={<Landing/>} />
-                <Route path={ROUTES.signIn} element={<SignIn/>} />
+                <Route path={ROUTES.searchResult} element={<SearchResult />} />
+                <Route path={ROUTES.signIn} element={<SignIn />} />
+                <Route path={ROUTES.registrationConfirmation} element={<RegistrationConfirmation />} />
+                <Route path={ROUTES.contentPage} element={<ContentPage />} />
+                <Route path={ROUTES.mainPage} element={<MainPage/>} />
             </Routes>
         </div>
     )
