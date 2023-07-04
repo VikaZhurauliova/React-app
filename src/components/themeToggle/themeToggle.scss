@@ -1,0 +1,26 @@
+@import "src/styles/colors";
+
+.menuTheme {
+  padding: 0 30px;
+  width: 100%;
+  border-left: 1px solid $PRIMARY2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle {
+  color: $WHITE;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 34px;
+  padding: 7px 11px;
+  background-color: $PRIMARY2;
+  border-radius: 2px;
+  width: 100px;
+
+  &-dark {
+    background-color: $PRIMARY2;
+    color: $SECONDARY;
+  }
+}

@@ -3,7 +3,13 @@
   margin:0;
   padding:0;
 }
-.App {}
+.App {
+
+  &-dark {
+    background: $BG_DARK;
+    color: $WHITE;
+  }
+}
 
 .btn-custom{
   cursor: pointer;
