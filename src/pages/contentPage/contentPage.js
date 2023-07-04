@@ -5,11 +5,8 @@ import { ReactComponent as Dislike } from '../../assets/svg/Down.svg';
 import { ReactComponent as Bookmark} from '../../assets/svg/Bookmark.svg'
 import { ReactComponent as ArrowLeft} from '../../assets/svg/arrow-left.svg'
 import { ReactComponent as ArrowRight} from '../../assets/svg/arrow-right.svg'
-import Footer from "../../components/footer/footer";
 
 import './contentPage.scss'
-
-
 
 const ContentPage = () => {
     const { posts, setPosts } = usePosts()
@@ -62,10 +59,7 @@ const ContentPage = () => {
                     </div>
                     <ArrowRight/>
                 </div>
-
             </div>
-            <hr className="content-page-line"/>
-            <Footer/>
         </div>
 
     )

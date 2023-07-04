@@ -1,4 +1,5 @@
 @import "src/styles/colors";
+@import "src/components/blog/largePost/largePost";
 
 .blog-container-col60-middle {
       display: flex;
@@ -31,7 +32,7 @@
           }
         }
       }
-    }
+}
   .under-line-middle {
       width: 100%;
       color: #DADADA;

@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 import { ReactComponent as Like } from '../../../assets/svg/Like.svg';
 import { ReactComponent as Dislike } from '../../../assets/svg/Down.svg';
 import { ReactComponent as Bookmark } from '../../../assets/svg/Bookmark.svg';
@@ -5,8 +7,12 @@ import { ReactComponent as Ellipsis } from '../../../assets/svg/More-Horizontal.
 
 import '../blog.scss'
 import './middlePost.scss'
+import useCounter from "../../../hooks/useCounter";
 
-const MiddlePost = ({posts, setPosts}) => {
+
+const MiddlePost = ({posts}) => {
+    const {counter, incrementCounter} = useCounter()
+    const [dislikeCount, setDislikeCount] = useState(0);
 
     return (
         <div className="blog-container-col60-middle">
@@ -23,11 +29,18 @@ const MiddlePost = ({posts, setPosts}) => {
                     </div>
                     <div className="blog-container-col60-large-footer">
                         <div className="blog-container-col60-large-footer-marks">
-                            <div className="blog-container-col60-large-footer-marks-like">
+                            <button className="btn-custom blog-container-col60-large-footer-marks-like"
+                                    onClick={() => {counter > 0 ? incrementCounter(0) : incrementCounter()}}
+                            >
                                 <Like/>
-                                <p className="blog-container-col60-large-footer-marks-like-count">{item?.lesson_num}</p>
-                            </div>
-                            <Dislike/>
+                                <p className="blog-container-col60-large-footer-marks-like-count">{counter}</p>
+                            </button>
+                            <button className="btn-custom blog-container-col60-large-footer-marks-like"
+                                    onClick={() => {dislikeCount > 0 ? setDislikeCount(0) : setDislikeCount(1)}}
+                            >
+                                <Dislike/>
+                                <p className="blog-container-col60-large-footer-marks-like-count">{dislikeCount}</p>
+                            </button>
                         </div>
                         <div className="blog-container-col60-large-footer-marks">
                             <Bookmark/>
