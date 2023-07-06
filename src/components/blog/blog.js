@@ -1,16 +1,16 @@
-import {useContext, useState} from "react";
-import {PostsContext} from "../../context/posts";
+
 
 import LargePost from "./largePost/largePost";
 import MiddlePost from "./middlePost/middlePost";
 import SmallPost from "./smallPost/smallPost";
 
 import './blog.scss'
+import {useSelector} from "react-redux";
 
 const Blog = () => {
-  const { posts } = useContext(PostsContext);
-    const [likeCount, setLikeCount] = useState(0);
-    const [dislikeCount, setDisLikeCount] = useState(0);
+  const { posts } = useSelector(state => state.posts);
+    // const [likeCount, setLikeCount] = useState(0);
+    // const [dislikeCount, setDisLikeCount] = useState(0);
 
     return (
         <div className="container">

@@ -1,10 +1,16 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
+import {setPosts} from "../stores/posts";
+import {useDispatch, useSelector} from "react-redux";
 
+let isPostInProcess = false
 const usePosts = () => {
-  const [ posts, setPosts ] = useState([]);
+  const {posts} = useSelector(state => state.posts);
+  const dispatch = useDispatch();
 
   useEffect(() => {
+
     const getPosts = async () => {
+      isPostInProcess = true;
       try {
         const urlParams = new URLSearchParams({
           limit: 15,
@@ -12,13 +18,15 @@ const usePosts = () => {
         });
         const { results: postsResponse } = await fetch('https://studapi.teachmeskills.by//blog/posts?' + urlParams)
           .then(response => response.json())
-        setPosts(postsResponse)
+        dispatch(setPosts(postsResponse))
       } catch (e) {
         console.error(e);
       }
     }
-    getPosts();
 
+    if(!isPostInProcess) {
+      getPosts();
+    }
 
   }, []);
 
