@@ -9,8 +9,6 @@ import {useSelector} from "react-redux";
 
 const Blog = () => {
   const { posts } = useSelector(state => state.posts);
-    // const [likeCount, setLikeCount] = useState(0);
-    // const [dislikeCount, setDisLikeCount] = useState(0);
 
     return (
         <div className="container">

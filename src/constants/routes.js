@@ -7,5 +7,5 @@ export const ROUTES = {
     post: 'post',
     searchResult: 'searchResult',
     contentPage: 'contentPage',
-    mainPage: 'mainPage'
+
 }

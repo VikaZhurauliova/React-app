@@ -1,4 +1,3 @@
-import {useState} from "react";
 
 import { ReactComponent as Like } from '../../../assets/svg/Like.svg';
 import { ReactComponent as Dislike } from '../../../assets/svg/Down.svg';
@@ -7,12 +6,9 @@ import { ReactComponent as Ellipsis } from '../../../assets/svg/More-Horizontal.
 
 import '../blog.scss'
 import './middlePost.scss'
-import useCounter from "../../../hooks/useCounter";
 
 
 const MiddlePost = ({posts}) => {
-    const {counter, incrementCounter} = useCounter()
-    const [dislikeCount, setDislikeCount] = useState(0);
 
     return (
         <div className="blog-container-col60-middle">
@@ -29,17 +25,13 @@ const MiddlePost = ({posts}) => {
                     </div>
                     <div className="blog-container-col60-large-footer">
                         <div className="blog-container-col60-large-footer-marks">
-                            <button className="btn-custom blog-container-col60-large-footer-marks-like"
-                                    onClick={() => {counter > 0 ? incrementCounter(0) : incrementCounter()}}
-                            >
+                            <button className="btn-custom blog-container-col60-large-footer-marks-like">
                                 <Like/>
-                                <p className="blog-container-col60-large-footer-marks-like-count">{counter}</p>
+                                <p className="blog-container-col60-large-footer-marks-like-count">{item.lesson_num}</p>
                             </button>
-                            <button className="btn-custom blog-container-col60-large-footer-marks-like"
-                                    onClick={() => {dislikeCount > 0 ? setDislikeCount(0) : setDislikeCount(1)}}
-                            >
+                            <button className="btn-custom blog-container-col60-large-footer-marks-like">
                                 <Dislike/>
-                                <p className="blog-container-col60-large-footer-marks-like-count">{dislikeCount}</p>
+                                <p className="blog-container-col60-large-footer-marks-like-count">{item.lesson_num }</p>
                             </button>
                         </div>
                         <div className="blog-container-col60-large-footer-marks">

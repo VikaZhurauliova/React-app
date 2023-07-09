@@ -17,7 +17,8 @@ const RoutesComponent = () => {
                 <Route path={ROUTES.signUp} element={<SignUp />} />
                 <Route path={ROUTES.registrationConfirmation} element={<RegistrationConfirmation />} />
                 <Route path={ROUTES.contentPage} element={<ContentPage />} />
-                <Route path={ROUTES.mainPage} element={<MainPage/>} />
+                <Route path={ROUTES.main} element={<MainPage/>} />
+
             </Routes>
         </div>
     )

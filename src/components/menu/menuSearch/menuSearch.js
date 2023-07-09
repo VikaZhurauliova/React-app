@@ -6,14 +6,17 @@ import { ReactComponent as CrossIcon } from '../../../assets/svg/cross.svg';
 import './menuSearch.scss'
 import {useDispatch, useSelector} from "react-redux";
 import {setSearch} from "../../../stores/posts";
+import SearchResult from "../../../pages/searchResult/searchResult";
 
 
 const MenuSearch = () => {
     const [ isInputShown, setIsInputShown ] = useState(false);
     const { search } = useSelector(state => state.posts);
     const dispatch = useDispatch()
+
     return (
         <div className="menuSearch">
+
             {isInputShown &&
                 (<input
                     className="menuSearch-input"
