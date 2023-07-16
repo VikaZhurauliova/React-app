@@ -9,7 +9,7 @@ import { ReactComponent as Ellipsis } from '../../../assets/svg/More-Horizontal.
 import './smallPost.scss'
 import {setFavorites} from "../../../stores/posts";
 
-const SmallPost = ({ posts}) => {
+const SmallPost = ({ posts }) => {
     const dispatch = useDispatch();
     const favorites = useSelector((state) => state.posts.favorites)
     const isFavorite = useCallback((id) => favorites.some((element) => id === element.id), [favorites]);
