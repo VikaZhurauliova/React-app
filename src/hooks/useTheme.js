@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useCallback} from "react";
-import {setTheme} from "../stores/theme";
 
+import {setTheme} from "../stores/theme";
 
 export const useTheme = () => {
     const dispatch = useDispatch();

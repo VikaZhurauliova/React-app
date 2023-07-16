@@ -3,17 +3,16 @@ import MenuSearch from "./menuSearch/menuSearch";
 import UserProfile from "./UserProfile/userProfile";
 import ThemeToggle from "../themeToggle/themeToggle";
 
-
 import './menu.scss'
 
 const Menu = ({user}) => {
     return (
         <div className="menu">
-            <MenuButton />
+            <MenuButton/>
             <div className="menu-search-user">
-                <MenuSearch />
+                <MenuSearch/>
                 <ThemeToggle/>
-                <UserProfile user={user} />
+                <UserProfile user={user}/>
             </div>
         </div>
     )

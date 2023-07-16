@@ -1,8 +1,10 @@
 @import "src/styles/colors";
+
 * {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
+
 .App {
 
   &-dark {
@@ -11,7 +13,7 @@
   }
 }
 
-.btn-custom{
+.btn-custom {
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -21,6 +23,7 @@
 body {
   background-color: $EXTRA_LIGHT;
 }
+
 a {
   cursor: pointer;
 }
@@ -33,6 +36,7 @@ a {
 .container + .container {
   margin-top: 72px;
 }
+
 .align-end {
   align-items: flex-end;
 }

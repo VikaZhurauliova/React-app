@@ -1,5 +1,5 @@
-import { ReactComponent as ArrowLeft} from '../../assets/svg/arrow-left.svg'
-import { ReactComponent as ArrowRight} from '../../assets/svg/arrow-right.svg'
+import {ReactComponent as ArrowLeft} from '../../assets/svg/arrow-left.svg'
+import {ReactComponent as ArrowRight} from '../../assets/svg/arrow-right.svg'
 
 import './pagination.scss'
 

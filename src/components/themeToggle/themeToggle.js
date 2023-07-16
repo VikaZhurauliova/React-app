@@ -1,14 +1,13 @@
 import {useMemo} from "react";
 
-import './themeToggle.scss';
-
 import {useTheme} from "../../hooks/useTheme";
-
 import {THEME} from "../../constants/theme";
+
+import './themeToggle.scss';
 
 const ThemeToggle = () => {
     const {theme, setTheme} = useTheme()
-    const isLightTheme = useMemo(() => theme === THEME.light, [ theme ])
+    const isLightTheme = useMemo(() => theme === THEME.light, [theme])
 
     return (
         <div className="menuTheme">
@@ -16,7 +15,7 @@ const ThemeToggle = () => {
                 className={`theme-toggle theme-toggle-${theme}`}
                 onClick={() => setTheme(isLightTheme ? THEME.dark : THEME.light)}
             >
-                { isLightTheme ? 'Dark' : 'Light' }
+                {isLightTheme ? 'Dark' : 'Light'}
             </button>
         </div>
     )

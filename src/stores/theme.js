@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 import {THEME} from "../constants/theme";
 
 
@@ -15,7 +15,7 @@ const themeSlice = createSlice({
 });
 
 // Extract and export each action creator by name
-export const { setTheme } = themeSlice.actions;
+export const {setTheme} = themeSlice.actions;
 // Export the reducer, either as a default or named export
 export default themeSlice.reducer;
 

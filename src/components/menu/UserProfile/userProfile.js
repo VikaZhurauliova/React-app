@@ -1,4 +1,5 @@
-import { ReactComponent as UserIcon } from '../../../assets/svg/user.svg';
+import {ReactComponent as UserIcon} from '../../../assets/svg/user.svg';
+
 import './userProfile.scss'
 
 const UserProfile = ({user = {}}) => {
@@ -17,7 +18,7 @@ const UserProfile = ({user = {}}) => {
                     </>
                 ) : (
                     <button className="btn-custom">
-                        <UserIcon />
+                        <UserIcon/>
                     </button>
                 )
             }

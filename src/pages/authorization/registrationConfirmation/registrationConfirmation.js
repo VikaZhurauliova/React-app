@@ -1,6 +1,7 @@
 import Button from "../../../components/button/button";
 
 import './registrationConfirmation.scss'
+
 const RegistrationConfirmation = () => {
     return (
         <div className="container">

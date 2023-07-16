@@ -1,9 +1,11 @@
 @import "src/styles/colors";
+
 .tabs {
 
   &-active {
     border-bottom: 2px solid $SECONDARY;;
   }
+
   &-title {
     color: $SECONDARY;
     font-size: 56px;
@@ -12,15 +14,15 @@
     margin: 72px 0 47px 0;
   }
 
-  &-wrap{
+  &-wrap {
     border-bottom: 1px solid $MEDIUM;
     display: flex;
     gap: 40px;
 
-    &-cell{
+    &-cell {
       padding: 24px 40px;
 
-      &-title{
+      &-title {
         font-weight: 600;
         font-size: 16px;
         line-height: 24px;
@@ -28,7 +30,7 @@
         cursor: pointer;
         margin: 0;
 
-        &:hover{
+        &:hover {
           color: $PRIMARY;
         }
       }

@@ -1,28 +1,29 @@
 import {useEffect} from "react";
-import {fetchPosts, setPosts} from "../stores/posts";
 import {useDispatch, useSelector} from "react-redux";
+
+import {fetchPosts, setPosts} from "../stores/posts";
 
 let isPostInProcess = false
 const usePosts = () => {
-  const {posts} = useSelector(state => state.posts);
-  const dispatch = useDispatch();
+    const {posts} = useSelector(state => state.posts);
+    const dispatch = useDispatch();
 
-  useEffect(() => {
+    useEffect(() => {
 
-    if(!isPostInProcess) {
-      dispatch(fetchPosts())
+        if (!isPostInProcess) {
+            dispatch(fetchPosts())
 
-    }
-  }, []);
+        }
+    }, []);
 
-  const likePost = (id) => {
-    // like post
-  }
+    // const likePost = (id) => {
+    //     // like post
+    // }
 
-  return {
-    posts,
-    setPosts
-  };
+    return {
+        posts,
+        setPosts
+    };
 }
 
 export default usePosts;

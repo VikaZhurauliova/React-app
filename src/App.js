@@ -7,19 +7,19 @@ import './App.scss';
 import {useSelector} from "react-redux";
 
 function App() {
-    const {theme} = useSelector( state => state.theme);
+    const {theme} = useSelector(state => state.theme);
     const user = {
-    firstName: "Nick",
-    lastName: "Denskiy"
+        firstName: "Nick",
+        lastName: "Denskiy"
     }
 
-  return(
-      <div className={`App App-${theme}`}>
-          <Menu user={user}/>
-          <RoutesComponent/>
-          <Footer/>
-      </div>
-  )
+    return (
+        <div className={`App App-${theme}`}>
+            <Menu user={user}/>
+            <RoutesComponent/>
+            <Footer/>
+        </div>
+    )
 }
 
 export default App;

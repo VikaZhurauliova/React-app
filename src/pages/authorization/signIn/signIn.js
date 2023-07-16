@@ -13,12 +13,13 @@ const SignIn = () => {
             <div className="signIn">
                 <a href="" className="signIn-backHome">Back to home</a>
                 <h2 className="signIn-title">Sign In</h2>
-                <Form className = "signIn-form">
-                    <Input label="Email" placeholder="Your email" refLink={emailRef} />
-                    <Input label="Password" placeholder="Your password" />
+                <Form className="signIn-form">
+                    <Input label="Email" placeholder="Your email" refLink={emailRef}/>
+                    <Input label="Password" placeholder="Your password"/>
                     <a className="signIn-form-forgot">Forgot password?</a>
                     <Button>Sign In</Button>
-                    <p className="signIn-form-registration">Don’t have an account? <a className="signIn-form-registration-link">Sign Up</a></p>
+                    <p className="signIn-form-registration">Don’t have an account? <a
+                        className="signIn-form-registration-link">Sign Up</a></p>
                 </Form>
             </div>
         </div>

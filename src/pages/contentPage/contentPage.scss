@@ -1,6 +1,7 @@
 @import "src/styles/colors";
+
 .content-page {
-  &-header{
+  &-header {
     color: $GREY;
     font-size: 16px;
     font-style: normal;
@@ -33,7 +34,7 @@
   }
 
   &-image {
-    position:absolute;
+    position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -42,8 +43,8 @@
       width: 992px;
       height: 518px;
       margin: 48px auto;
-      overflow:hidden;
-      position:relative;
+      overflow: hidden;
+      position: relative;
     }
 
   }
@@ -52,7 +53,7 @@
     display: flex;
     flex-direction: column;
     gap: 48px;
-    padding:0 35px;
+    padding: 0 35px;
 
     &-main {
       color: $SECONDARY;
@@ -93,7 +94,7 @@
     }
   }
 
-  &-line{
+  &-line {
     width: 100%;
     color: $MEDIUM;
     margin: 72px 0;
@@ -108,10 +109,11 @@
       gap: 24px;
       align-items: center;
 
-      &-main{
+      &-main {
         display: flex;
         flex-direction: column;
         gap: 8px;
+
         &-prev {
           color: $SECONDARY;
           font-size: 16px;
@@ -119,6 +121,7 @@
           font-weight: 500;
           line-height: 24px;
         }
+
         &-text {
           color: $GREY;
           font-size: 16px;

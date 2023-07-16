@@ -4,7 +4,8 @@ const Input = (props) => {
     const {
         initialValue,
         placeholder,
-        onChange = () => {},
+        onChange = () => {
+        },
         disabled,
         error,
         errorMsg,
@@ -19,15 +20,15 @@ const Input = (props) => {
                 <input
                     className={`ra-input ${error ? 'ra-input-error' : ''}`}
                     value={initialValue}
-                    onChange={({ target: { value } }) => onChange(value)}
+                    onChange={({target: {value}}) => onChange(value)}
                     type={type}
                     placeholder={placeholder}
-                    disabled ={disabled}
+                    disabled={disabled}
                     ref={refLink}
                 />
             </label>
             <p className="ra-input-error-list">
-                { errorMsg }
+                {errorMsg}
             </p>
         </div>
     )

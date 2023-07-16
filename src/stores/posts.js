@@ -9,7 +9,7 @@ export const fetchPosts = createAsyncThunk(
             limit: 11, // count of elements on page
             offset: 1, // page number
         });// limit=11&offset=1
-        const { results: postsResponse } = await fetch('https://studapi.teachmeskills.by/blog/posts?' + urlParams)
+        const {results: postsResponse} = await fetch('https://studapi.teachmeskills.by/blog/posts?' + urlParams)
             .then(response => response.json());
         return postsResponse;
     }
@@ -20,12 +20,11 @@ const postsSlice = createSlice({
     initialState: {
         posts: [],
         search: '',
-        favorites: []
+        favorites: [],
     },
     reducers: {
         setPosts: (state, action) => {
             state.posts = action.payload;
-            console.log(action)
         },
         setSearch: (state, action) => {
             state.search = action.payload
@@ -34,7 +33,7 @@ const postsSlice = createSlice({
             // state.favorites = action.payload
             const postId = action.payload
 
-            if (state.favorites.length > 0 ) {
+            if (state.favorites.length > 0) {
                 const samePostIndex = state.favorites.findIndex((element) => postId === element.id)
                 if (samePostIndex !== -1) {
                     state.favorites.splice(samePostIndex, 1);
@@ -65,7 +64,7 @@ const postsSlice = createSlice({
 });
 
 // Extract and export each action creator by name
-export const { setPosts, setSearch, setFavorites } = postsSlice.actions;
+export const {setPosts, setSearch, setFavorites} = postsSlice.actions;
 // Export the reducer, either as a default or named export
 export default postsSlice.reducer;
 

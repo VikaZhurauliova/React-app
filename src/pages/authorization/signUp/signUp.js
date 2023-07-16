@@ -9,15 +9,15 @@ import './signUp.scss'
 const SignUp = () => {
     const [form, setForm] = useState({});
     const setValue = (key, value) => {
-        setForm({...form, [key] : value})
+        setForm({...form, [key]: value})
     }
     const onSubmit = () => {
 
         const setForm = async () => {
-            try{
+            try {
                 const results = await fetch('https://studapi.teachmeskills.by/auth/users',
-                {method:'POST',  body: JSON.stringify(form)})
-                .then(response => response.json());
+                    {method: 'POST', body: JSON.stringify(form)})
+                    .then(response => response.json());
                 console.log(results)
             } catch (e) {
                 console.error(e)
@@ -29,10 +29,13 @@ const SignUp = () => {
     return (
         <div className="container">
             <Form className="sign-up-form">
-                <Input label="Name" placeholder="Your name" onChange={value=>setValue('name', value)} />
-                <Input label="Email" type="email" placeholder="Your email"  onChange={value=>setValue('email', value)}/>
-                <Input label="Password" type="password" placeholder="Your password" onChange={value=>setValue('password', value)} />
-                <Input label="ConfirmPassword" type="password" placeholder="Your password" onChange={value=>setValue('confirmPassword', value)} />
+                <Input label="Name" placeholder="Your name" onChange={value => setValue('name', value)}/>
+                <Input label="Email" type="email" placeholder="Your email"
+                       onChange={value => setValue('email', value)}/>
+                <Input label="Password" type="password" placeholder="Your password"
+                       onChange={value => setValue('password', value)}/>
+                <Input label="ConfirmPassword" type="password" placeholder="Your password"
+                       onChange={value => setValue('confirmPassword', value)}/>
                 <Button fullWidth onClick={onSubmit}>Sign Up</Button>
             </Form>
         </div>

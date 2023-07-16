@@ -1,6 +1,12 @@
 import './button.scss';
 
-const Button = ({ children, type = 'primary', onClick = () => {}, fullWidth = false }) => (
+const Button = ({
+        children,
+        type = 'primary',
+        onClick = () => {
+        },
+        fullWidth = false
+    }) => (
     <button
         className={
             `btn btn-${type} ${fullWidth ? 'btn-full-width' : ''}`
@@ -10,6 +16,4 @@ const Button = ({ children, type = 'primary', onClick = () => {}, fullWidth = fa
         {children}
     </button>
 );
-
-
 export default Button;

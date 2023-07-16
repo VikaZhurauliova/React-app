@@ -1,17 +1,15 @@
-import { useState} from "react";
-
-import { ReactComponent as SearchIcon } from '../../../assets/svg/search.svg';
-import { ReactComponent as CrossIcon } from '../../../assets/svg/cross.svg';
-
-import './menuSearch.scss'
+import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {setSearch} from "../../../stores/posts";
-import SearchResult from "../../../pages/searchResult/searchResult";
 
+import {ReactComponent as SearchIcon} from '../../../assets/svg/search.svg';
+import {ReactComponent as CrossIcon} from '../../../assets/svg/cross.svg';
+
+import './menuSearch.scss'
 
 const MenuSearch = () => {
-    const [ isInputShown, setIsInputShown ] = useState(false);
-    const { search } = useSelector(state => state.posts);
+    const [isInputShown, setIsInputShown] = useState(false);
+    const {search} = useSelector(state => state.posts);
     const dispatch = useDispatch()
 
     return (
