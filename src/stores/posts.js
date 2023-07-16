@@ -21,6 +21,8 @@ const postsSlice = createSlice({
         posts: [],
         search: '',
         favorites: [],
+        likes: [],
+        dislikes: [],
     },
     reducers: {
         setPosts: (state, action) => {
@@ -43,7 +45,35 @@ const postsSlice = createSlice({
 
             const post = state.posts.find((element) => postId === element.id)
             state.favorites.push(post);
-        }
+        },
+        setLikes: (state, action) => {
+            const postId = action.payload
+
+            if (state.likes.length > 0) {
+                const samePostIndex = state.likes.findIndex((element) => postId === element.id)
+                if (samePostIndex !== -1) {
+                    state.likes.splice(samePostIndex, 1);
+                    return
+                }
+            }
+
+            const post = state.posts.find((element) => postId === element.id)
+            state.likes.push(post);
+        },
+        setDislikes: (state, action) => {
+            const postId = action.payload
+
+            if (state.dislikes.length > 0) {
+                const samePostIndex = state.dislikes.findIndex((element) => postId === element.id)
+                if (samePostIndex !== -1) {
+                    state.dislikes.splice(samePostIndex, 1);
+                    return
+                }
+            }
+
+            const post = state.posts.find((element) => postId === element.id)
+            state.dislikes.push(post);
+        },
     },
 
     extraReducers: (builder) => {
@@ -64,7 +94,7 @@ const postsSlice = createSlice({
 });
 
 // Extract and export each action creator by name
-export const {setPosts, setSearch, setFavorites} = postsSlice.actions;
+export const {setPosts, setSearch, setFavorites, setLikes, setDislikes} = postsSlice.actions;
 // Export the reducer, either as a default or named export
 export default postsSlice.reducer;
 

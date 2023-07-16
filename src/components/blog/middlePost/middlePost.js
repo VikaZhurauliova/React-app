@@ -1,11 +1,11 @@
 import {useDispatch, useSelector} from "react-redux";
-import {useCallback} from "react";
+import {useCallback, useState} from "react";
 
 import {ReactComponent as Like} from '../../../assets/svg/Like.svg';
 import {ReactComponent as Dislike} from '../../../assets/svg/Down.svg';
 import {ReactComponent as Bookmark} from '../../../assets/svg/Bookmark.svg';
 import {ReactComponent as Ellipsis} from '../../../assets/svg/More-Horizontal.svg';
-import {setFavorites} from "../../../stores/posts";
+import {setFavorites, setLikes, setDislikes} from "../../../stores/posts";
 
 import '../blog.scss'
 import './middlePost.scss'
@@ -15,6 +15,12 @@ const MiddlePost = ({posts}) => {
     const favorites = useSelector((state) => state.posts.favorites)
     const isFavorite = useCallback((id) => favorites.some((element) => id === element.id), [favorites]);
 
+    const likes = useSelector((state) => state.posts.likes)
+    const isLike = useCallback((id) => likes.some((element) => id === element.id), [likes]);
+
+    const dislikes = useSelector((state) => state.posts.dislikes)
+    const isDislikes = useCallback((id) => dislikes.some((element) => id === element.id), [dislikes]);
+    const [likeCount, setLikeCount] = useState(0);
     return (
         <div className="blog-container-col60-middle">
             {posts.slice(1, 7).map(item => (
@@ -30,18 +36,26 @@ const MiddlePost = ({posts}) => {
                     </div>
                     <div className="blog-container-col60-large-footer">
                         <div className="blog-container-col60-large-footer-marks">
-                            <button className="btn-custom blog-container-col60-large-footer-marks-like">
-                                <Like/>
-                                <p className="blog-container-col60-large-footer-marks-like-count">{item.lesson_num}</p>
+                            <button
+                                onClick={() => {likeCount > 0 ? setLikeCount(0) : setLikeCount(1)}}
+                                className="btn-custom blog-container-col60-large-footer-marks-like">
+                                <Like className={`favorites ${isLike(item.id) ? "favorites--active" : ""} `}
+                                      onClick={() => dispatch(setLikes(item.id))}
+                                />
+                                <p className="blog-container-col60-large-footer-marks-like-count">{likeCount}</p>
                             </button>
                             <button className="btn-custom blog-container-col60-large-footer-marks-like">
-                                <Dislike/>
+                                <Dislike
+                                    className={`favorites ${isDislikes(item.id) ? "favorites--active" : ""} `}
+                                    onClick={() => dispatch(setDislikes(item.id))}
+                                />
                                 <p className="blog-container-col60-large-footer-marks-like-count">{item.lesson_num}</p>
                             </button>
                         </div>
                         <div className="blog-container-col60-large-footer-marks">
                             <Bookmark className={`favorites ${isFavorite(item.id) ? "favorites--active" : ""} `}
-                                      onClick={() => dispatch(setFavorites(item.id))}/>
+                                      onClick={() => dispatch(setFavorites(item.id))}
+                            />
                             <Ellipsis/>
                         </div>
                     </div>

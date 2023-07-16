@@ -35,3 +35,12 @@
   color: #DADADA;
   margin-bottom: 40px;
 }
+.favorites {
+  cursor: pointer;
+
+  &--active {
+    path {
+      fill: #ffe222;
+    }
+  }
+}
