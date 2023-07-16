@@ -6,7 +6,7 @@ export const fetchPosts = createAsyncThunk(
         // Здесь только логика запроса и возврата данных
         // Никакой обработки ошибок
         const urlParams = new URLSearchParams({
-            limit: 11, // count of elements on page
+            limit: 30, // count of elements on page
             offset: 1, // page number
         });// limit=11&offset=1
         const {results: postsResponse} = await fetch('https://studapi.teachmeskills.by/blog/posts?' + urlParams)

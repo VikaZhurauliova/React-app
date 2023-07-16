@@ -23,7 +23,7 @@ const MiddlePost = ({posts}) => {
     const [likeCount, setLikeCount] = useState(0);
     return (
         <div className="blog-container-col60-middle">
-            {posts.slice(1, 7).map(item => (
+            {posts.slice(20, 26).map(item => (
                 <div className="blog-container-col60-middle-cell" key={item.id}>
                     <img src={item?.image} className="blog-container-col60-middle-cell-image"></img>
                     <div className="blog-container-col60-middle-cell-description">
