@@ -3,13 +3,18 @@ import { ReactComponent as Like } from '../../../assets/svg/Like.svg';
 import { ReactComponent as Dislike } from '../../../assets/svg/Down.svg';
 import { ReactComponent as Bookmark } from '../../../assets/svg/Bookmark.svg';
 import { ReactComponent as Ellipsis } from '../../../assets/svg/More-Horizontal.svg';
+import {setFavorites} from "../../../stores/posts";
 
 import '../blog.scss'
 import './middlePost.scss'
+import {useDispatch, useSelector} from "react-redux";
+import {useCallback} from "react";
 
 
 const MiddlePost = ({posts}) => {
-
+    const dispatch = useDispatch();
+    const favorites = useSelector((state) => state.posts.favorites)
+    const isFavorite = useCallback((id) => favorites.some((element) => id === element.id ), [favorites]);
     return (
         <div className="blog-container-col60-middle">
             {posts.slice(1, 7).map(item => (
@@ -35,7 +40,7 @@ const MiddlePost = ({posts}) => {
                             </button>
                         </div>
                         <div className="blog-container-col60-large-footer-marks">
-                            <Bookmark/>
+                            <Bookmark  className={`favorites ${isFavorite(item.id) ? "favorites--active" : ""} `} onClick={() => dispatch(setFavorites(item.id))}/>
                             <Ellipsis/>
                         </div>
                     </div>

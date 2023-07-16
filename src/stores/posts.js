@@ -20,7 +20,7 @@ const postsSlice = createSlice({
     initialState: {
         posts: [],
         search: '',
-        bookmarks: []
+        favorites: []
     },
     reducers: {
         setPosts: (state, action) => {
@@ -30,8 +30,20 @@ const postsSlice = createSlice({
         setSearch: (state, action) => {
             state.search = action.payload
         },
-        setBookmaks: (state, action) => {
-            state.bookmarks = action.payload
+        setFavorites: (state, action) => {
+            // state.favorites = action.payload
+            const postId = action.payload
+
+            if (state.favorites.length > 0 ) {
+                const samePostIndex = state.favorites.findIndex((element) => postId === element.id)
+                if (samePostIndex !== -1) {
+                    state.favorites.splice(samePostIndex, 1);
+                    return
+                }
+            }
+
+            const post = state.posts.find((element) => postId === element.id)
+            state.favorites.push(post);
         }
     },
 
@@ -53,7 +65,7 @@ const postsSlice = createSlice({
 });
 
 // Extract and export each action creator by name
-export const { setPosts, setSearch } = postsSlice.actions;
+export const { setPosts, setSearch, setFavorites } = postsSlice.actions;
 // Export the reducer, either as a default or named export
 export default postsSlice.reducer;
 

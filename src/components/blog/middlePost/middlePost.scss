@@ -38,3 +38,13 @@
       color: #DADADA;
       margin-top: 40px;
   }
+
+.favorites {
+  cursor: pointer;
+
+  &--active {
+    path {
+      fill: #ffe222;
+    }
+  }
+}
