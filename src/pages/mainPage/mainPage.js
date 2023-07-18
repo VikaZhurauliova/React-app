@@ -16,12 +16,20 @@ const MainPage = () => {
             <Tabs/>
             <div className="blog-container">
                 <div className="blog-container-col60">
-                    <MiddlePost
-                        posts={posts}
-                    />
+                    <div className="blog-container-col60-middle">
+                        {posts.slice(0, 6).map(item => (
+                            <MiddlePost
+                                posts={posts}
+                            />
+                        ))}
+                    </div>
                 </div>
-                <SmallPost posts={posts}
-                />
+                <div className="blog-container-col40">
+                    {posts.slice(6, 11).map(item => (
+                        <SmallPost posts={posts}/>
+                    ))}
+                </div>
+
             </div>
             <Pagination/>
         </div>
