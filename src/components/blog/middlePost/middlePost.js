@@ -10,7 +10,7 @@ import {setFavorites, setLikes, setDislikes} from "../../../stores/posts";
 import '../blog.scss'
 import './middlePost.scss'
 
-const MiddlePost = ({posts}) => {
+const MiddlePost = ({post}) => {
     const dispatch = useDispatch();
     const favorites = useSelector((state) => state.posts.favorites)
     const isFavorite = useCallback((id) => favorites.some((element) => id === element.id), [favorites]);
@@ -22,14 +22,14 @@ const MiddlePost = ({posts}) => {
     const isDislikes = useCallback((id) => dislikes.some((element) => id === element.id), [dislikes]);
     const [likeCount, setLikeCount] = useState(0);
     return (
-        <div className="blog-container-col60-middle-cell" key={posts.id}>
-            <img src={posts?.image} className="blog-container-col60-middle-cell-image"></img>
+        <div className="blog-container-col60-middle-cell" key={post.id}>
+            <img src={post?.image} className="blog-container-col60-middle-cell-image"></img>
             <div className="blog-container-col60-middle-cell-description">
                 <div className="blog-container-col60-middle-cell-description-date">
-                    {posts?.date}
+                    {post?.date}
                 </div>
                 <h2 className="blog-container-col60-middle-cell-description-title">
-                    {posts?.title}
+                    {post?.title}
                 </h2>
             </div>
             <div className="blog-container-col60-large-footer">
@@ -39,22 +39,22 @@ const MiddlePost = ({posts}) => {
                             likeCount > 0 ? setLikeCount(0) : setLikeCount(1)
                         }}
                         className="btn-custom blog-container-col60-large-footer-marks-like">
-                        <Like className={`favorites ${isLike(posts.id) ? "favorites--active" : ""} `}
-                              onClick={() => dispatch(setLikes(posts.id))}
+                        <Like className={`favorites ${isLike(post.id) ? "favorites--active" : ""} `}
+                              onClick={() => dispatch(setLikes(post.id))}
                         />
                         <p className="blog-container-col60-large-footer-marks-like-count">{likeCount}</p>
                     </button>
                     <button className="btn-custom blog-container-col60-large-footer-marks-like">
                         <Dislike
-                            className={`favorites ${isDislikes(posts.id) ? "favorites--active" : ""} `}
-                            onClick={() => dispatch(setDislikes(posts.id))}
+                            className={`favorites ${isDislikes(post.id) ? "favorites--active" : ""} `}
+                            onClick={() => dispatch(setDislikes(post.id))}
                         />
-                        <p className="blog-container-col60-large-footer-marks-like-count">{posts.lesson_num}</p>
+                        <p className="blog-container-col60-large-footer-marks-like-count">{post.lesson_num}</p>
                     </button>
                 </div>
                 <div className="blog-container-col60-large-footer-marks">
-                    <Bookmark className={`favorites ${isFavorite(posts.id) ? "favorites--active" : ""} `}
-                              onClick={() => dispatch(setFavorites(posts.id))}
+                    <Bookmark className={`favorites ${isFavorite(post.id) ? "favorites--active" : ""} `}
+                              onClick={() => dispatch(setFavorites(post.id))}
                     />
                     <Ellipsis/>
                 </div>

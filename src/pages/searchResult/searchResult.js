@@ -18,12 +18,10 @@ const SearchResult = () => {
       dispatch(fetchPosts())
     }, []);
 
-    console.log(filteredPosts)
-
     return (
         <>
             {filteredPosts.map((post) => (
-                <SmallPost posts={[post]}/>
+                <SmallPost post={post}/>
             ))}
         </>
     )

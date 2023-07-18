@@ -17,16 +17,16 @@ const MainPage = () => {
             <div className="blog-container">
                 <div className="blog-container-col60">
                     <div className="blog-container-col60-middle">
-                        {posts.slice(0, 6).map(item => (
+                        {posts.slice(0, 6).map(post => (
                             <MiddlePost
-                                posts={posts}
+                              post={post}
                             />
                         ))}
                     </div>
                 </div>
                 <div className="blog-container-col40">
-                    {posts.slice(6, 11).map(item => (
-                        <SmallPost posts={posts}/>
+                    {posts.slice(6, 11).map(post => (
+                        <SmallPost post={post}/>
                     ))}
                 </div>
 

@@ -9,33 +9,33 @@ import { ReactComponent as Ellipsis } from '../../../assets/svg/More-Horizontal.
 import './smallPost.scss'
 import {setFavorites} from "../../../stores/posts";
 
-const SmallPost = ({ posts }) => {
+const SmallPost = ({ post }) => {
     const dispatch = useDispatch();
     const favorites = useSelector((state) => state.posts.favorites)
     const isFavorite = useCallback((id) => favorites.some((element) => id === element.id), [favorites]);
     return (
-            <div key={posts.id}>
+            <div key={post.id}>
                 <div className="blog-container-col40-small">
                     <div className="blog-container-col40-small-description">
                         <div className="blog-container-col40-small-description-date">
-                            {posts?.date}
+                            {post?.date}
                         </div>
                         <h2 className="blog-container-col40-large-description-title">
-                            {posts?.title}
+                            {post?.title}
                         </h2>
                     </div>
-                    <img src={posts?.image} className="blog-container-col40-small-image"></img>
-                    <div className="blog-container-col60-large-footer">
+                    <img src={post?.image} className="blog-container-col40-small-image"></img>
+                    <div post="blog-container-col60-large-footer">
                         <div className="blog-container-col60-large-footer-marks">
                             <div className="blog-container-col60-large-footer-marks-like">
                                 <Like/>
-                                <p className="blog-container-col60-large-footer-marks-like-count">{posts?.lesson_num}</p>
+                                <p className="blog-container-col60-large-footer-marks-like-count">{post?.lesson_num}</p>
                             </div>
                             <Dislike/>
                         </div>
                         <div className="blog-container-col60-large-footer-marks">
-                            <Bookmark className={`favorites ${isFavorite(posts.id) ? "favorites--active" : ""} `}
-                                      onClick={() => dispatch(setFavorites(posts.id))}
+                            <Bookmark className={`favorites ${isFavorite(post.id) ? "favorites--active" : ""} `}
+                                      onClick={() => dispatch(setFavorites(post.id))}
                             />
                             <Ellipsis/>
                         </div>
